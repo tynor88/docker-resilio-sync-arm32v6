@@ -59,8 +59,8 @@ ENTRYPOINT ["/init"]
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs"
+LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="tynor88"
 
 # package verions
 ARG SYNC_ARCH="armhf"
