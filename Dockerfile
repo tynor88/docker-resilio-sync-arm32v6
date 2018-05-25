@@ -50,7 +50,7 @@ RUN \
  rm -rf \
         /tmp/* && \
  echo "**** create abc user and make our folders ****" && \
-groupmod -g 1000 users && \
+ groupmod -g 1000 users && \
  useradd -u 911 -U -d /config -s /bin/false abc && \
  usermod -G users abc && \
  mkdir -p \
