@@ -1,5 +1,8 @@
 services:
   - docker
   
+before_install:
+  - chmod +x scripts/build.sh
+  
 script:
   - scripts/build.sh
