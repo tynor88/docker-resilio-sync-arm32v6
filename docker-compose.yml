@@ -1,0 +1,7 @@
+version: "3"
+services:
+  arm-build:
+    build: .
+    privileged: true
+    volumes:
+      - "${TRAVIS_BUILD_DIR}:/source"
