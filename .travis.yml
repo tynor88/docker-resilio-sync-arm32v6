@@ -2,7 +2,7 @@ services:
   - docker
   
 before_install:
-  - chmod +x scripts/build.sh
+  - chmod +x scripts/run.sh
   
 script:
-  - scripts/build.sh
+  - scripts/run.sh
