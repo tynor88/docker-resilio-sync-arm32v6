@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:stretch
+FROM resin/raspberry-pi-debian:stretch
 MAINTAINER tynor88
 
 # set version for s6 overlay
