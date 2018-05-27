@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine
+FROM offtechnologies/docker-arm32v6-base-image-alpine-qemu
 MAINTAINER tynor88
 
 # set version for s6 overlay
