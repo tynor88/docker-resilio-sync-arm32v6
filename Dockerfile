@@ -16,23 +16,17 @@ ARG SYNC_ARCH="arm"
 ARG SYNC_VER="stable"
 
 # set environment variables
+ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/root" \
 LANGUAGE="en_US.UTF-8" \
 LANG="en_US.UTF-8" \
 TERM="xterm"
 
 RUN \
- echo "**** install build packages ****" && \
- apk add --no-cache --virtual=build-dependencies \
-        curl \
-        tar && \
- echo "**** install runtime packages ****" && \
- apk add --no-cache \
-        bash \
-        ca-certificates \
-        coreutils \
-        shadow \
-        tzdata && \
+ echo "**** install packages ****" && \
+ apt-get install -y \
+	       curl \
+	       tzdata && \
  echo "**** add s6 overlay ****" && \
  curl -o \
  /tmp/s6-overlay.tar.gz -L \
@@ -47,7 +41,6 @@ RUN \
         /tmp/sync.tar.gz \
         -C /usr/bin && \
  echo "**** create abc user and make our folders ****" && \
- groupmod -g 1000 users && \
  useradd -u 911 -U -d /config -s /bin/false abc && \
  usermod -G users abc && \
  mkdir -p \
@@ -55,13 +48,11 @@ RUN \
         /config \
         /defaults && \
  echo "**** cleanup ****" && \
+ apt-get clean && \
  rm -rf \
-        /tmp/* \
- echo "**** cleanup ****" && \
- apk del --purge \
-        build-dependencies && \
- rm -rf \
-        /tmp/*
+	       /tmp/* \
+	       /var/lib/apt/lists/* \
+	       /var/tmp/*
 
 # add local files
 COPY root/ /
