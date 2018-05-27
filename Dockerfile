@@ -60,5 +60,3 @@ COPY root/ /
 # ports and volumes
 EXPOSE 8888 55555
 VOLUME /config /downloads /sync
-
-ENTRYPOINT ["/init"]
