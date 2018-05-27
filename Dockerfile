@@ -1,7 +1,5 @@
-FROM resin/raspberry-pi-debian
+FROM lsiobase/xenial-root-armhf
 MAINTAINER tynor88
-
-RUN [ "cross-build-start" ]
 
 # set version for s6 overlay
 ARG OVERLAY_VERSION="v1.21.4.0"
@@ -55,8 +53,6 @@ RUN \
 	       /tmp/* \
 	       /var/lib/apt/lists/* \
 	       /var/tmp/*
-	       
-RUN [ "cross-build-end" ]
 
 # add local files
 COPY root/ /
@@ -64,3 +60,5 @@ COPY root/ /
 # ports and volumes
 EXPOSE 8888 55555
 VOLUME /config /downloads /sync
+
+ENTRYPOINT ["/init"]
