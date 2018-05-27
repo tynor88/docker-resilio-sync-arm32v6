@@ -18,9 +18,6 @@ after_success:
   - >
     if [ "$TRAVIS_BRANCH" == "master" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSPASSWORD"
-      TAG=$(grep "FROM " Dockerfile | sed 's/.*://')
-      docker tag tynor88/docker-resilio-sync-arm32v6 tynor88/docker-resilio-sync-arm32v6:$TAG
       docker tag tynor88/docker-resilio-sync-arm32v6 tynor88/docker-resilio-sync-arm32v6:latest
-      docker push tynor88/docker-resilio-sync-arm32v6:$TAG
       docker push tynor88/docker-resilio-sync-arm32v6:latest
     fi
