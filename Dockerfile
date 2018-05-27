@@ -1,4 +1,4 @@
-FROM lsiobase/xenial-root-armhf
+FROM resin/rpi-raspbian:stretch
 MAINTAINER tynor88
 
 # set version for s6 overlay
