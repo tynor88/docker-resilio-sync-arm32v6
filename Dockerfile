@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine
+FROM arm32v6/alpine
 MAINTAINER tynor88
 
 # set version for s6 overlay
