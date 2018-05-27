@@ -1,4 +1,4 @@
-FROM offtechnologies/docker-arm32v6-base-image-alpine-qemu
+FROM lsiobase/xenial-root-armhf
 MAINTAINER tynor88
 
 # set version for s6 overlay
