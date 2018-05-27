@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi-debian:stretch
+FROM resin/raspberry-pi-debian
 MAINTAINER tynor88
 
 RUN [ "cross-build-start" ]
@@ -56,7 +56,6 @@ RUN \
 	       /var/lib/apt/lists/* \
 	       /var/tmp/*
 	       
-RUN [ "cross-build-end" ]  
 
 # add local files
 COPY root/ /
@@ -65,4 +64,4 @@ COPY root/ /
 EXPOSE 8888 55555
 VOLUME /config /downloads /sync
 
-ENTRYPOINT ["/init"]
+RUN [ "cross-build-end" ] 
