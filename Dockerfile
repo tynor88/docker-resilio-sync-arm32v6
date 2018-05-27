@@ -21,8 +21,6 @@ LANGUAGE="en_US.UTF-8" \
 LANG="en_US.UTF-8" \
 TERM="xterm"
 
-COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
-
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
@@ -35,6 +33,13 @@ RUN \
         coreutils \
         shadow \
         tzdata && \
+ echo "**** add qemu static ****" && \
+ curl -o \ 
+ qemu-arm-static.tar.gz -L \
+        "https://github.com/multiarch/qemu-user-static/releases/download/v2.6.0/qemu-arm-static.tar.gz" && \
+ tar xfz \
+        /tmp/qemu-arm-static.tar.gz \
+        -C /usr/bin/ && \
  echo "**** add s6 overlay ****" && \
  curl -o \
  /tmp/s6-overlay.tar.gz -L \
