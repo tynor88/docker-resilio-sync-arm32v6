@@ -12,7 +12,7 @@ LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="tynor88"
 
 # set package verion resilio-sync
-ARG SYNC_ARCH="armhf"
+ARG SYNC_ARCH="arm"
 ARG SYNC_VER="stable"
 
 # set environment variables
