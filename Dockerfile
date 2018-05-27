@@ -64,6 +64,6 @@ COPY root/ /
 EXPOSE 8888 55555
 VOLUME /config /downloads /sync
 
-RUN [ "cross-build-end" ] 
-
 ENTRYPOINT ["/init"]
+
+RUN [ "cross-build-end" ] 
