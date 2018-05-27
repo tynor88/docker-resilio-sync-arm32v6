@@ -1,6 +1,8 @@
 FROM resin/raspberry-pi-debian:stretch
 MAINTAINER tynor88
 
+RUN [ "cross-build-start" ]
+
 # set version for s6 overlay
 ARG OVERLAY_VERSION="v1.21.4.0"
 ARG OVERLAY_ARCH="armhf"
@@ -53,6 +55,8 @@ RUN \
 	       /tmp/* \
 	       /var/lib/apt/lists/* \
 	       /var/tmp/*
+	       
+RUN [ "cross-build-end" ]  
 
 # add local files
 COPY root/ /
