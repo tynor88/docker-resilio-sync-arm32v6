@@ -18,6 +18,6 @@ after_success:
   - >
     if [ "$TRAVIS_BRANCH" == "master" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      docker tag tynor88/docker-resilio-sync-arm32v6 tynor88/docker-resilio-sync-arm32v6:latest
-      docker push tynor88/docker-resilio-sync-arm32v6:latest
+      docker tag tynor88/resilio-sync-arm32v6 tynor88/resilio-sync-arm32v6:latest
+      docker push tynor88/resilio-sync-arm32v6:latest
     fi
