@@ -56,6 +56,7 @@ RUN \
 	       /var/lib/apt/lists/* \
 	       /var/tmp/*
 	       
+RUN [ "cross-build-end" ]
 
 # add local files
 COPY root/ /
@@ -63,7 +64,3 @@ COPY root/ /
 # ports and volumes
 EXPOSE 8888 55555
 VOLUME /config /downloads /sync
-
-ENTRYPOINT ["/init"]
-
-RUN [ "cross-build-end" ] 
