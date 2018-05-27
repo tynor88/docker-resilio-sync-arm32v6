@@ -21,6 +21,8 @@ LANGUAGE="en_US.UTF-8" \
 LANG="en_US.UTF-8" \
 TERM="xterm"
 
+COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
+
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
