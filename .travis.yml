@@ -8,10 +8,10 @@ language: bash
 install: true
   
 before_install:
-  - chmod +x scripts/run.sh
+  - chmod +x scripts/build.sh
 
 before_script:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
   
 script:
-  - scripts/run.sh
+  - scripts/build.sh
